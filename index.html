@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Ti</title>
+    <title>Para Ti - Corazón Estático</title>
     <style>
         body {
             display: flex;
@@ -12,7 +12,7 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
-            background-color: #fff5f5;
+            background-color: #fff5f5; /* Un fondo rosado muy suave */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
@@ -20,10 +20,10 @@
             position: relative;
             width: 100px;
             height: 90px;
-            background-color: #e63946;
-            transform: rotate(-45deg);
-            margin-bottom: 50px;
-            animation: latido 1.2s infinite;
+            background-color: #e63946; /* El rojo del corazón */
+            transform: rotate(-45deg); /* Esta inclinación forma el corazón */
+            margin-bottom: 70px; /* Espacio para el texto abajo */
+            /* He eliminado la línea de animación aquí */
         }
 
         .corazon::before, .corazon::after {
@@ -32,30 +32,32 @@
             width: 100px;
             height: 100px;
             background-color: #e63946;
-            border-radius: 50%;
+            border-radius: 50%; /* Esto hace las partes redondas */
         }
 
-        .corazon::before { top: -50px; left: 0; }
-        .corazon::after { left: 50px; top: 0; }
+        .corazon::before {
+            top: -50px;
+            left: 0;
+        }
 
-        @keyframes latido {
-            0% { transform: rotate(-45deg) scale(1); }
-            15% { transform: rotate(-45deg) scale(1.1); }
-            30% { transform: rotate(-45deg) scale(1); }
-            45% { transform: rotate(-45deg) scale(1.15); }
-            60% { transform: rotate(-45deg) scale(1); }
+        .corazon::after {
+            left: 50px;
+            top: 0;
         }
 
         h1 {
             color: #333;
             text-align: center;
             padding: 0 20px;
+            font-size: 2rem;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
 
     <div class="corazon"></div>
+
     <h1>"Aquí pones tus palabras especiales"</h1>
 
 </body>
