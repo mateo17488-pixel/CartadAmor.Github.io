@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Ti - Corazón Estático</title>
+    <meta name="robots" content="noindex"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solo para tus ojos</title>
     <style>
         body {
             display: flex;
@@ -12,18 +12,18 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
-            background-color: #fff5f5; /* Un fondo rosado muy suave */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff5f5;
+            font-family: sans-serif;
+            visibility: hidden; 
         }
 
         .corazon {
             position: relative;
             width: 100px;
             height: 90px;
-            background-color: #e63946; /* El rojo del corazón */
-            transform: rotate(-45deg); /* Esta inclinación forma el corazón */
-            margin-bottom: 70px; /* Espacio para el texto abajo */
-            /* He eliminado la línea de animación aquí */
+            background-color: #e63946;
+            transform: rotate(-45deg);
+            margin-bottom: 70px;
         }
 
         .corazon::before, .corazon::after {
@@ -32,33 +32,36 @@
             width: 100px;
             height: 100px;
             background-color: #e63946;
-            border-radius: 50%; /* Esto hace las partes redondas */
+            border-radius: 50%;
         }
 
-        .corazon::before {
-            top: -50px;
-            left: 0;
-        }
+        .corazon::before { top: -50px; left: 0; }
+        .corazon::after { left: 50px; top: 0; }
 
-        .corazon::after {
-            left: 50px;
-            top: 0;
-        }
-
-        h1 {
-            color: #333;
-            text-align: center;
-            padding: 0 20px;
-            font-size: 2rem;
-            margin-top: 20px;
-        }
+        h1 { color: #333; text-align: center; padding: 0 20px; }
     </style>
 </head>
 <body>
 
-    <div class="corazon"></div>
+    <script>
+        
+        var claveCorrecta = "<11/12/25>"; 
+        
+        var intento = prompt("Ingresa la contraseña para ver el mensaje:");
 
-    <h1>"Aquí pones tus palabras especiales"</h1>
+        if (intento === claveCorrecta) {
+            // Si es correcta, mostramos el contenido
+            document.body.style.visibility = "visible";
+        } else {
+            // Si es incorrecta, mostramos error
+            alert("Contraseña incorrecta.");
+            document.body.innerHTML = "<h1>Acceso no autorizado. Actualiza la página e intenta de nuevo.</h1>";
+            document.body.style.visibility = "visible";
+        }
+    </script>
+
+    <div class="corazon"></div>
+    <h1>"Aquí van tus palabras"</h1>
 
 </body>
 </html>
